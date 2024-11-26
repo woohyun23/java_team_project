@@ -1,43 +1,54 @@
 package courseregistration.services;
 
-import java.util.HashMap;
-import java.util.Map;
+import courseregistration.db.DatabaseManager;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.HashSet;
+import java.util.Set;
 
 public class LoginService {
-    // 메모리 기반 임시 저장소
-    private final Map<String, String> activeUsers = new HashMap<>();
 
-    /**
-     * 로그인 메서드: 닉네임으로 로그인
-     * @param nickname 사용자 닉네임
-     * @return 성공 여부 메시지
-     */
-    public String login(String nickname) {
-        if (activeUsers.containsKey(nickname)) {
-            return "이미 사용 중인 닉네임입니다. 다른 닉네임을 선택하세요.";
+    private Set<String> activeUsers = new HashSet<>(); // 활성 사용자 목록
+
+    public boolean login(String nickname) {
+        try (Connection connection = DatabaseManager.getConnection()) {
+            // 사용자 삽입 시도
+            String query = "INSERT INTO users (nickname) VALUES (?)";
+            try (PreparedStatement ps = connection.prepareStatement(query)) {
+                ps.setString(1, nickname);
+                ps.executeUpdate();
+            }
+            activeUsers.add(nickname); // 로그인 성공 시 활성 사용자 목록에 추가
+            return true;
+        } catch (SQLException e) {
+            // 닉네임 중복으로 실패 시
+            System.out.println("이미 로그인 중인 닉네임입니다.");
+            return false;
         }
-        activeUsers.put(nickname, "active"); // 상태를 active로 설정
-        return "로그인 성공! 닉네임: " + nickname;
     }
 
-    /**
-     * 로그아웃 메서드: 닉네임으로 로그아웃
-     * @param nickname 사용자 닉네임
-     * @return 성공 여부 메시지
-     */
-    public String logout(String nickname) {
-        if (!activeUsers.containsKey(nickname)) {
-            return "로그아웃 실패: 닉네임이 존재하지 않습니다.";
+    public boolean logout(String nickname) {
+        try (Connection connection = DatabaseManager.getConnection()) {
+            // 사용자 삭제
+            String query = "DELETE FROM users WHERE nickname = ?";
+            try (PreparedStatement ps = connection.prepareStatement(query)) {
+                ps.setString(1, nickname);
+                int rowsAffected = ps.executeUpdate();
+                if (rowsAffected > 0) {
+                    activeUsers.remove(nickname); // 로그아웃 시 활성 사용자 목록에서 제거
+                    return true;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        activeUsers.remove(nickname); // 닉네임 삭제
-        return "로그아웃 성공! 닉네임: " + nickname;
+        return false;
     }
 
-    /**
-     * 현재 활성 사용자 목록 확인 (테스트용)
-     * @return 활성 사용자 목록
-     */
-    public Map<String, String> getActiveUsers() {
-        return new HashMap<>(activeUsers);
+    public Set<String> getActiveUsers() {
+        return activeUsers; // 활성 사용자 목록 반환
     }
 }

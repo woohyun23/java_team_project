@@ -5,17 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c60bc52c-a246-482b-b794-85af9e2e864c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/db/DatabaseManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/services/LoginService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/services/RegistrationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java_project_teamA/java_project_teamA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java_project_teamA/java_project_teamA.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java_project_teamA/src/db/DatabaseConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java_project_teamA/src/main/java/login/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java_project_teamA/src/main/java/models/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java_project_teamA/src/main/java/services/LoginService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/db/DatabaseManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/db/DatabaseManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/models/Course.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/models/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/services/LoginService.class" beforeDir="false" afterPath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/services/LoginService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/services/RegistrationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/services/RegistrationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/session/SessionManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/db/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/db/DatabaseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/services/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/services/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/services/RegistrationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/services/RegistrationService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +79,7 @@
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "C:/Users/pwh08/projects/java_team_project/java_project_teamA/src/test",
     "last_opened_file_path": "C:/Users/pwh08/h2-database/h2/bin/h2-2.3.232.jar",
-    "project.structure.last.edited": "Problems",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager"
