@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>한국공학대학교 로그인</title>
+	<link rel="stylesheet" type="text/css" href="login.css">
+	<script type="text/javascript">
+        // 로그인 처리 함수
+        async function j_login() {
+            const id = document.querySelector("input[name='j_id']").value.trim();
+            const password = document.querySelector("input[name='j_password']").value.trim();
+
+            // 로그인 API 호출
+            const response = await fetch('/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id, password })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                alert('로그인 성공!');
+                localStorage.setItem('refreshToken', data.refreshToken); // 토큰 저장
+                window.location.href = 'enroll.html'; // 수강신청 페이지로 이동
+            } else {
+                alert('로그인 실패! 아이디와 비밀번호를 확인해주세요.');
+            }
+        }
+    </script>
+</head>
+<body>
+	<section>
+		<div class="loginBox">
+			<div class="login">
+				<div class="form">
+					<div class="logo_w">
+						<img src="./img/login_logo2.png" alt="한국공학대학교">
+						<h1 class="logo">TECH  UNIVERSITY <span class="em">OF KOREA</span></h1>
+					</div>
+					<!--로그인 입력박스-->
+					<div class="inputBox">
+						<form name="loginForm" action="/login" method="post">
+							<input type="text" name="j_id" class="id" value="" placeholder="아이디를 입력해주세요.">
+							<input type="password" name="j_password" class="pw" value="" placeholder="비밀번호를 입력해주세요.">
+							<a style="cursor:pointer" onclick="j_login();" class="submit"><span>로그인</span></a>
+						</form>
+					</div>
+				</div>
+
+				<div class="notice_w">
+					<div class="notice"> <!--우측 공지사항-->
+						<p class="title"><span class="em">주의사항</span> : 내용을 반드시 확인해주세요.</p>
+
+						<ul class="content">
+							<li><span class="liner">※ 수강신청 기간외 수강신청 데이터는 모두 삭제</span>됩니다.</li>
+							<li>※ 자동순번 (번호표) 대기 시스템 도입으로 매크로 프로그램 및 새로고침 (F5) 실행 시, 순번이 맨 뒤로 밀릴 수 있습니다.</li>
+							<li>※ 홈페이지에서 수강신청 시스템을 새로 접속할 경우, 다시 로그인해야합니다.</li>
+							<li>※ 중복로그인을 허용하지 않습니다.</li>
+							<li>※ 아이디 비밀번호는 대/소문자를 구분합니다.</li>
+							<li>※ 타인 ID도용,스크립트,매크로,오토클릭 사용금지 - 발견시 수강내역 삭제후 학칙에 의거 징계조치 함.</li>
+							<li>※ IE8버전 이하로는 지원하지 않습니다.</li>
+ 							<li>※ 4분동안 액션이 없는경우 로그아웃됩니다.</li>
+ 							<li>※ 수강신청 시스템 로그아웃 후 로그인을 재시도할 경우, 모든 브라우저를 다 닫고 새로운 브라우저로 진행해야 합니다.</li>
+						    <li><p><span style="color:red; font-size: 12pt; font-weight:bold"><u>※ 수강신청 시작 전 반드시 가이드에 따라 진행 후 로그인 해주세요.</u></span></p><a href="http://sugang.tukorea.ac.kr/img/login/Edge_guide.png" class="btn" target="_blank">Edge 가이드보기</a>
+						    <a href="http://sugang.tukorea.ac.kr/img/login/Chrome_guide.png" class="btn" target="_blank">크롬 가이드보기</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- 기타 디테일 -->
+	<footer class="footer">
+		<ul class="inform">
+			<li>15073 경기도 시흥시 산기대학로 237 (정왕동) 한국공학대학교</li>
+			<li>대표전화 031) 8041-1000</li>
+			<li>입학안내 1588-2036</li>
+			<li class="last">COPYRIGHT 2017 TECH UNIVERSITY OF KOREA. ALL RIGHT RESERVED.</li>
+		</ul>
+	</footer>
+</body>
+</html>

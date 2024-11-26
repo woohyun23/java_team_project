@@ -1,0 +1,201 @@
+/*전체 스타일*/
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: small;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: white;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    width: 13%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+.logo {
+    padding: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.logout-btn {
+    background-color: white;
+    color: black;
+    margin-bottom: 5px;
+    text-align: left;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.search-bar {
+    width: 96%;
+    margin-bottom: 10px;
+}
+
+.search-bar-container {
+    position: relative; /* 버튼 위치를 입력창 안으로 조정하기 위한 상대 위치 설정 */
+    width: 96%;
+    margin-bottom: 10px;
+}
+
+.search-btn {
+    position: absolute; /* 입력창 안으로 겹치게 배치 */
+    top: 50%; /* 세로 중앙 정렬 */
+    right: 2px; /* 입력창 우측에서 떨어뜨리기 */
+    transform: translateY(-80%); /* 세로 중앙 정렬 보정 */
+    background: none;
+    cursor: pointer;
+    color: #888;
+}
+
+.search-icon {
+    width: 15px;
+    height: 15px;
+    display: block;
+}
+
+.user-info-box {
+    width: 100%;
+}
+
+/* 사용자 정보 헤더 */
+.user-info-header {
+    padding: 1px 0px 1px 10px;
+    color: white;
+    background-color: #0481CC;
+}
+
+/* 수강 가능학점*/
+.credit-info {
+    padding: 1px 0px 1px 10px;
+    background-color: #F8F8F8; /* 회색 바탕 */
+    border-bottom: 1px solid #ddd;
+}
+
+/* 나머지 사용자 정보*/
+.user-info {
+    padding: 1px 0px 1px 10px;
+    background-color: white; 
+    border-bottom: 1px solid #ddd;
+}
+
+.course-type {
+    padding: 1px 0px 100px 10px;
+    background-color: white; 
+    border-bottom: 1px solid #ddd;
+}
+
+.user-info p {
+    margin: 5px 0;
+}
+
+/* 수강신청 관련 문의박스 */
+.contact-info {
+    padding: 1px 0px 70px 10px;
+    font-size: 0.9em;
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+/* 과목 목록 (자과 전공과목 조회) */
+
+.main-content {
+    flex-grow: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-left: 1px solid #ddd;
+}
+
+/* 섹션 제목 */
+.course-list h2::before, .cart h2::before {
+    content: "■";  /* 글머리기호 대체 */
+    margin-right: 10px;  
+    color: #0481CC;  
+    font-size: 1em;  
+}
+
+.course-list h2, .cart h2 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    padding-bottom: 5px;
+    color: #333;
+}
+
+/* 테이블 공통 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+}
+
+tbody {
+    border-bottom: 1px solid #ddd;
+}
+
+/* 세로 구분선 */
+th::after, td::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 1px;
+    height: 60%;
+    background-color: #ccc;
+    transform: translateY(-50%);
+}
+
+/* 마지막 셀의 구분선 제거 */
+th:last-child::after, 
+td:last-child::after {
+    display: none;
+}
+
+/* 테이블 헤더 */
+th {
+    background-color: #F8F8F8;
+    font-weight: bold;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+/* 테이블 버튼 */
+button {
+    padding: 5px 10px;
+    background-color: #D5D3F2;
+    color: white;
+    border:#886BCC;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: white;
+}
+
+/* 희망과목 미리담기 섹션 */
+.summary-bar {
+    background-color: #F8F8F8;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
+}

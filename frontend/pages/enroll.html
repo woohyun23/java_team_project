@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포도알: 모의 수강신청</title>
+    <link rel="stylesheet" href="enroll.css">
+    <script>
+        // 로그아웃 처리 함수
+        async function logout() {
+            const refreshToken = localStorage.getItem('refreshToken');
+
+            if (!refreshToken) {
+                alert('로그인 정보가 없습니다.');
+                return;
+            }
+
+            // 로그아웃 API 호출
+            const response = await fetch('/auth/logout', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ refreshToken })
+            });
+
+            if (response.ok) {
+                alert('로그아웃 완료');
+                localStorage.removeItem('refreshToken'); // 토큰 삭제
+                window.location.href = 'login.html'; // 로그인 페이지로 이동
+            } else {
+                alert('로그아웃 실패');
+            }
+        }
+
+        // 과목 검색 처리 함수
+        async function searchSubject() {
+            const subjectName = document.querySelector('.search-bar').value.trim();
+
+            if (!subjectName) {
+                alert('검색어를 입력해주세요.');
+                return;
+            }
+
+            // 과목 조회 API 호출
+            const response = await fetch(`/subject/?subjectName=${encodeURIComponent(subjectName)}`);
+
+            if (response.ok) {
+                const data = await response.json();
+                const table = document.querySelector('#courseTable');
+
+                // 조회된 과목 데이터를 테이블에 추가
+                table.innerHTML = data.map((subject, index) => `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${subject.department}</td>
+                        <td>${subject.grade}</td>
+                        <td>${subject.courseCode}</td>
+                        <td>${subject.section}</td>
+                        <td>${subject.subjectName}</td>
+                        <td>${subject.mergeable ? "O" : "X"}</td>
+                        <td>${subject.type}</td>
+                        <td>${subject.minorAvailable ? "O" : "X"}</td>
+                        <td>${subject.doubleMajorAvailable ? "O" : "X"}</td>
+                        <td>${subject.credits}</td>
+                        <td>${subject.time}</td>
+                        <td>${subject.currentEnrollments}</td>
+                        <td>${subject.maxEnrollments}</td>
+                        <td>${subject.instructor}</td>
+                        <td>${subject.dayNight}</td>
+                        <td>${subject.classType}</td>
+                        <td>${subject.schedule}</td>
+                        <td>${subject.delayStatus}</td>
+                        <td><button onclick="addToCart('${subject.courseCode}')">신청</button></td>
+                    </tr>
+                `).join('');
+            } else {
+                alert('과목 조회 실패');
+            }
+        }
+
+        // 강의 추가 함수
+        async function addToCart(courseCode) {
+            const response = await fetch('/cart/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ courseCode })
+            });
+
+            if (response.ok) {
+                alert('강의가 장바구니에 추가되었습니다.');
+            } else {
+                alert('강의 추가 실패!');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- 좌측/사이드바 섹션 -->
+        <aside class="sidebar">
+            <img src="./img/logo.png" alt="한국공학대 로고" class="logo">
+            <button class="logout-btn" onclick="logout()">로그아웃&nbsp;&nbsp;&nbsp;|</button>
+            <!-- 검색 입력 -->
+            <div class="search-bar-container">
+                <input type="text" placeholder="교과목으로 검색하기" class="search-bar">
+                <btn class="search-btn" onclick="searchSubject()">
+                    <img src="./img/search-btn.png" alt="검색" class="search-icon">
+                </btn>
+            </div>
+            <div class="user-info-box">
+                <div class="user-info-header">
+                    <p>사용자 정보</p>
+                </div>
+                <div class="credit-info">
+                    <p>수강 가능학점: 2~21</p>
+                </div>
+                <div class="user-info">
+                    <p>2024년 1학기</p>
+                    <p>소프트웨어공학 / 2학년</p>
+                    <p>2000000000</p>
+                    <p>OOO</p>
+                </div>
+                <div class="course-type">
+                    <p>자과 과목 조희</p>
+                    <p>교양 과목 조희</p>
+                    <p>계열기초 과목 조희</p>
+                </div>
+            </div>
+            <div class="contact-info">
+                <p>수강신청 관련문의</p>
+                <p>정규학기: 031) 8041-0023, 0027, 0028, 0029<br>
+                   계절학기: 031) 8041-0026, 0027, 0028, 0029</p>
+            </div>
+        </aside>
+        <!-- 우측 위/수강신청 섹션(자과 전공과목 조회) -->
+        <main class="main-content">
+            <section class="course-list">
+                <h2>자과 전공과목 조회</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>순번</th>
+                            <th>개설학과</th>
+                            <th>학년</th>
+                            <th>교과목코드</th>
+                            <th>강좌번호</th>
+                            <th>교과목명</th>
+                            <th>합반여부</th>
+                            <th>이수구분</th>
+                            <th>부전공</th>
+                            <th>복수전공</th>
+                            <th>학점</th>
+                            <th>시간</th>
+                            <th>수강인원</th>
+                            <th>제한인원</th>
+                            <th>담당교수</th>
+                            <th>주야</th>
+                            <th>수업진행구분</th>
+                            <th>강의시간(강의실)</th>
+                            <th>지연여부</th>
+                            <th>수강신청</th>
+                        </tr>
+                    </thead>
+                    <tbody id="courseTable">
+                        <!-- 여기에 조회된 과목 데이터 동적으로 삽입됨 -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- 우측 아래/희망과목 담기 섹션-->
+            <section class="cart">
+                <h2>희망과목 담기</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>순번</th>
+                            <th>교과목코드</th>
+                            <th>강좌번호</th>
+                            <th>교과목명</th>
+                            <th>합반여부</th>
+                            <th>이수구분</th>
+                            <th>학점</th>
+                            <th>시간</th>
+                            <th>담당교수</th>
+                            <th>주야</th>
+                            <th>수업진행구분</th>
+                            <th>강의시간(강의실)</th>
+                            <th>수강삭제</th>
+                            <th>신청상태</th>
+                            <th>비고</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cartTable">
+                        <!-- 여기에 담은 과목 데이터 동적으로 삽입됨 -->
+                    </tbody>
+                </table>
+                <div class="summary-bar">
+                    <p>신청과목수: 5</p>
+                    <p>총신청학점: 15</p>
+                    <p>현장연구 학습군 신청학점: 0</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="enroll.js"></script>
+</body>
+</html>
