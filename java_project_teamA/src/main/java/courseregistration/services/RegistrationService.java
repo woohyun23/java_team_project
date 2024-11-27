@@ -98,9 +98,10 @@ public class RegistrationService {
                 }
             }
         }
-        return null; // 강의명 없음
+        return null;
     }
 
+    // 수강 신청 가능한 과목 조회 기능
     public List<String> getAvailableCourses() {
         List<String> courses = new ArrayList<>();
         try (Connection connection = DatabaseManager.getConnection()) {
@@ -115,5 +116,22 @@ public class RegistrationService {
             e.printStackTrace();
         }
         return courses;
+    }
+
+    // 수강 신청 완료한 과목 삭제 기능
+    public boolean unregisterCourse(String nickname, String courseName) {
+        try (Connection connection = DatabaseManager.getConnection()) {
+            // 강의를 수강신청한 사용자가 존재하는지 확인하고 삭제
+            String query = "DELETE FROM registrations WHERE user_nickname = ? AND course_id = (SELECT id FROM courses WHERE course_name = ?)";
+            try (PreparedStatement ps = connection.prepareStatement(query)) {
+                ps.setString(1, nickname);
+                ps.setString(2, courseName);
+                int rowsAffected = ps.executeUpdate();
+                return rowsAffected > 0; // 삭제 성공 시 true 반환
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }
