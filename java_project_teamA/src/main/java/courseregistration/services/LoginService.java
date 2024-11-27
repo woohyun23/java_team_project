@@ -51,4 +51,24 @@ public class LoginService {
     public Set<String> getActiveUsers() {
         return activeUsers; // 활성 사용자 목록 반환
     }
+
+    public void logoutAllActiveUsers() {
+        try (Connection connection = DatabaseManager.getConnection()) {
+            // 활성 사용자 목록에 있는 모든 닉네임 삭제
+            String query = "DELETE FROM users WHERE nickname = ?";
+            try (PreparedStatement ps = connection.prepareStatement(query)) {
+                for (String nickname : activeUsers) {
+                    ps.setString(1, nickname);
+                    ps.addBatch(); // Batch에 추가
+                }
+                ps.executeBatch(); // Batch 실행
+            }
+            // 활성 사용자 목록 초기화
+            activeUsers.clear();
+            System.out.println("모든 활성 사용자가 로그아웃되었습니다.");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("활성 사용자 로그아웃 처리 중 오류가 발생했습니다.");
+        }
+    }
 }

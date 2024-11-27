@@ -11,6 +11,12 @@ public class Main {
         RegistrationService registrationService = new RegistrationService();
         Scanner scanner = new Scanner(System.in);
 
+        // 종료 시 모든 사용자 로그아웃을 위한 Shutdown Hook 추가
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            System.out.println("프로그램이 종료됩니다. 모든 사용자가 로그아웃 처리됩니다.");
+            loginService.logoutAllActiveUsers();
+        }));
+
         while (true) {
             System.out.println("\n====== 수강신청 서비스 ======");
             System.out.println("1. 로그인");
@@ -64,7 +70,7 @@ public class Main {
                 case 6: // 종료
                     System.out.println("프로그램 종료");
                     scanner.close();
-                    System.exit(0);
+                    System.exit(0); // 종료
 
                 default:
                     System.out.println("올바른 메뉴를 선택하세요.");
