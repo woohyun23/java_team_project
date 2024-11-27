@@ -25,7 +25,8 @@ public class Main {
             System.out.println("4. 수강신청 가능한 과목 보기");
             System.out.println("5. 수강신청");
             System.out.println("6. 신청한 강의 목록 보기");
-            System.out.println("7. 종료");
+            System.out.println("7. 수강신청한 강의 삭제");
+            System.out.println("8. 종료");
             System.out.print("메뉴 선택: ");
             int choice = scanner.nextInt();
             scanner.nextLine(); // 버퍼 비우기
@@ -75,7 +76,16 @@ public class Main {
                     System.out.println("신청한 강의 목록: " + registrationService.getRegisteredCourses(registeredNickname));
                     break;
 
-                case 7: // 종료
+                case 7: // 수강신청한 강의 삭제
+                    System.out.print("로그인 중인 닉네임 입력: ");
+                    String unregisterNickname = scanner.nextLine();
+                    System.out.print("삭제할 강의 이름 입력: ");
+                    String unregisterCourseName = scanner.nextLine();
+                    boolean unregisterResult = registrationService.unregisterCourse(unregisterNickname, unregisterCourseName);
+                    System.out.println(unregisterResult ? unregisterCourseName + " 강의가 삭제되었습니다." : "강의 삭제 실패. 닉네임 또는 강의 이름을 확인하세요.");
+                    break;
+
+                case 8: // 종료
                     System.out.println("프로그램 종료");
                     scanner.close();
                     System.exit(0); // 종료
