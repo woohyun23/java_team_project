@@ -7,17 +7,7 @@
     <list default="true" id="c60bc52c-a246-482b-b794-85af9e2e864c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/db/DatabaseManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/db/DatabaseManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/models/Course.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/models/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/services/LoginService.class" beforeDir="false" afterPath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/services/LoginService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/services/RegistrationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/services/RegistrationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/session/SessionManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/db/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/db/DatabaseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/services/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/services/LoginService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/services/RegistrationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/services/RegistrationService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +17,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -52,9 +41,6 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2pFZ815Q9LxiB5UjPcSuQhmCLVi" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -63,24 +49,12 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "Application.courseregistration.Main.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.UserRepositoryTest.executor": "Run",
-    "JUnit.UserRepositoryTest.testDeleteUser.executor": "Run",
-    "JUnit.UserRepositoryTest.testSaveAndFindUser.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "git-widget-placeholder": "로그인-구현-마무리-#9",
+    "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_directory_selection": "C:/Users/pwh08/projects/java_team_project/java_project_teamA/src/test",
-    "last_opened_file_path": "C:/Users/pwh08/h2-database/h2/bin/h2-2.3.232.jar",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
+    "last_opened_file_path": "C:/Program Files/MySQL/mysql-connector-j-9.1.0/mysql-connector-j-9.1.0.jar",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
@@ -90,18 +64,17 @@
       <recent name="C:\Users\pwh08\git\java_team_project\java_project_teamA\src\main\java" />
       <recent name="C:\Users\pwh08\git\java_team_project\java_project_teamA\src\main" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="test" />
-      <recent name="repository" />
-    </key>
   </component>
   <component name="RunManager" selected="Application.courseregistration.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="MAIN_CLASS_NAME" value="login.Main" />
       <module name="java_project_teamA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="login.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -119,60 +92,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java_project_teamA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.UserRepositoryTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserRepositoryTest.testDeleteUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java_project_teamA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.UserRepositoryTest" />
-      <option name="METHOD_NAME" value="testDeleteUser" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserRepositoryTest.testSaveAndFindUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java_project_teamA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.UserRepositoryTest" />
-      <option name="METHOD_NAME" value="testSaveAndFindUser" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.courseregistration.Main" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.UserRepositoryTest.testDeleteUser" />
-        <item itemvalue="JUnit.UserRepositoryTest.testSaveAndFindUser" />
-        <item itemvalue="JUnit.UserRepositoryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -186,26 +109,5 @@
       <updated>1732363631509</updated>
     </task>
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.sql.SQLException" package="java.sql" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
