@@ -22,9 +22,10 @@ public class Main {
             System.out.println("1. 로그인");
             System.out.println("2. 로그아웃");
             System.out.println("3. 활성 사용자 보기");
-            System.out.println("4. 수강신청");
-            System.out.println("5. 신청한 강의 목록 보기");
-            System.out.println("6. 종료");
+            System.out.println("4. 수강신청 가능한 과목 보기");
+            System.out.println("5. 수강신청");
+            System.out.println("6. 신청한 강의 목록 보기");
+            System.out.println("7. 종료");
             System.out.print("메뉴 선택: ");
             int choice = scanner.nextInt();
             scanner.nextLine(); // 버퍼 비우기
@@ -48,7 +49,14 @@ public class Main {
                     System.out.println("현재 활성 사용자: " + loginService.getActiveUsers());
                     break;
 
-                case 4: // 수강 신청
+                case 4: // 수강신청 가능한 과목 보기
+                    System.out.println("수강신청 가능한 과목:");
+                    for (String course : registrationService.getAvailableCourses()) {
+                        System.out.println(course);
+                    }
+                    break;
+
+                case 5: // 수강 신청
                     System.out.print("로그인 중인 닉네임 입력: ");
                     String courseNickname = scanner.nextLine();
                     System.out.print("신청할 강의 이름 입력: ");
@@ -61,13 +69,13 @@ public class Main {
                     }
                     break;
 
-                case 5: // 신청한 강의 목록 보기
+                case 6: // 신청한 강의 목록 보기
                     System.out.print("로그인 중인 닉네임 입력: ");
                     String registeredNickname = scanner.nextLine();
                     System.out.println("신청한 강의 목록: " + registrationService.getRegisteredCourses(registeredNickname));
                     break;
 
-                case 6: // 종료
+                case 7: // 종료
                     System.out.println("프로그램 종료");
                     scanner.close();
                     System.exit(0); // 종료

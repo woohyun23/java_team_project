@@ -100,4 +100,20 @@ public class RegistrationService {
         }
         return null; // 강의명 없음
     }
+
+    public List<String> getAvailableCourses() {
+        List<String> courses = new ArrayList<>();
+        try (Connection connection = DatabaseManager.getConnection()) {
+            String query = "SELECT course_name FROM courses";
+            try (PreparedStatement ps = connection.prepareStatement(query);
+                 ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    courses.add(rs.getString("course_name"));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return courses;
+    }
 }

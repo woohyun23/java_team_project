@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c60bc52c-a246-482b-b794-85af9e2e864c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/db/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/db/DatabaseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/services/RegistrationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/services/RegistrationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/services/RegistrationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/services/RegistrationService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +52,7 @@
     "Application.Main.executor": "Run",
     "Application.courseregistration.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "프로그램-종료-시-일괄-로그아웃-#16",
+    "git-widget-placeholder": "과목-조회-#12",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Program Files/MySQL/mysql-connector-j-9.1.0/mysql-connector-j-9.1.0.jar",
     "project.structure.last.edited": "Libraries",
@@ -64,7 +67,7 @@
       <recent name="C:\Users\pwh08\git\java_team_project\java_project_teamA\src\main" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.courseregistration.Main">
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="login.Main" />
       <module name="java_project_teamA" />
