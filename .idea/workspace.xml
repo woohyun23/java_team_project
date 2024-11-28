@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c60bc52c-a246-482b-b794-85af9e2e864c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/services/RegistrationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/java_project_teamA/build/classes/courseregistration/services/RegistrationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/services/RegistrationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/java_project_teamA/src/main/java/courseregistration/services/RegistrationService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +50,7 @@
     "Application.Main.executor": "Run",
     "Application.courseregistration.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "과목-삭제-#11",
+    "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Program Files/MySQL/mysql-connector-j-9.1.0/mysql-connector-j-9.1.0.jar",
     "project.structure.last.edited": "Libraries",

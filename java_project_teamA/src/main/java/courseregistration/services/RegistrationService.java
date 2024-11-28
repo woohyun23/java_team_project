@@ -121,13 +121,21 @@ public class RegistrationService {
     // 수강 신청 완료한 과목 삭제 기능
     public boolean unregisterCourse(String nickname, String courseName) {
         try (Connection connection = DatabaseManager.getConnection()) {
-            // 강의를 수강신청한 사용자가 존재하는지 확인하고 삭제
-            String query = "DELETE FROM registrations WHERE user_nickname = ? AND course_id = (SELECT id FROM courses WHERE course_name = ?)";
+            // 사용자 ID 조회
+            int userId = getUserId(connection, nickname);
+            if (userId == -1) return false; // 유효하지 않은 사용자
+
+            // course_name을 이용해 course_id 조회
+            int courseId = getCourseId(connection, courseName);
+            if (courseId == -1) return false; // 유효하지 않은 강의
+
+            // 수강신청한 과목 삭제
+            String query = "DELETE FROM registrations WHERE user_id = ? AND course_id = ?";
             try (PreparedStatement ps = connection.prepareStatement(query)) {
-                ps.setString(1, nickname);
-                ps.setString(2, courseName);
+                ps.setInt(1, userId);  // user_id 설정
+                ps.setInt(2, courseId); // course_id 설정
                 int rowsAffected = ps.executeUpdate();
-                return rowsAffected > 0; // 삭제 성공 시 true 반환
+                return rowsAffected > 0; // 삭제 성공 여부 반환
             }
         } catch (SQLException e) {
             e.printStackTrace();
